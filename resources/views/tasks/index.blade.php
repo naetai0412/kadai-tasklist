@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>メッセージ一覧</h1>
+    <h1>メッセージ一-覧</h1>
 
     @if (count($tasks) > 0)
         <table class="table table-striped">
@@ -16,8 +16,8 @@
             <tbody>
             @foreach ($tasks as $task)
                 <tr>
-                    <td>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!} : {{ $task->status }} > {{ $task->content }}</li>
-                    <td>{{ $task->status }}</td>
+                    <td>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!} : {{ $task->title }} > {{ $task->content }}</li>
+                    <td>{{ $task->title }}</td>
                     <td>{{ $task->content }}</td>
                 </tr>        
             @endforeach
