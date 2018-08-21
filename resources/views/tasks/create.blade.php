@@ -4,7 +4,7 @@
 
     <h1>タスク新規作成ページ</h1>
 <div class="row">
-    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12　col-lg-offset-3 col-md-offset-2 col-sm-offset-2">
+    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12　col-sm-offset-3 col-md-offset-2 col-lg-offset-2">
        
     {!! Form::model($task, ['route' => 'tasks.store']) !!}
     
