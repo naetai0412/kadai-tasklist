@@ -94,10 +94,14 @@ class TaskController extends Controller
     public function edit($id)
     {
         $task = Task::find($id);
-
+        
+    if (\Auth::check()) {
         return view('tasks.edit', [
             'task' => $task,
         ]);
+    }else {
+            return view('welcome');
+        }
     }
 
     /**
