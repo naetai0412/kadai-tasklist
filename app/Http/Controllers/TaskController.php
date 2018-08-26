@@ -95,11 +95,11 @@ class TaskController extends Controller
     {
         $task = Task::find($id);
         
-    if (\Auth::user()) {
+        if (\Auth::$task->user_id()) {
         return view('tasks.edit', [
             'task' => $task,
         ]);
-    }else {
+        }else {
             return view('welcome');
         }
     }
