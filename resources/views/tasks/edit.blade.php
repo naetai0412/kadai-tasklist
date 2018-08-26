@@ -2,7 +2,7 @@
 
 @section('content')
 
-@if Auth::user()
+
     <h1>id: {{ $task->id }} のタスク編集ページ</h1>
     
   
@@ -23,10 +23,7 @@
         {!! Form::submit('更新',['class' => 'btn btn-default']) !!}
 
     {!! Form::close() !!}
-@else
-    <li>{!! link_to_route('signup.get', 'Signup') !!}</li>
-    <li>{!! link_to_route('login', 'Login') !!}</li>
-@endif    
+    
 
  </div>
 </div>

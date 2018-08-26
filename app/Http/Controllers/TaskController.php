@@ -16,8 +16,7 @@ class TaskController extends Controller
     public function index()
     {
         $data = [];
-        if (\Auth::check()) {
-            $user = \Auth::user();
+        if (\Auth::user()) {
             $tasks = $user->tasks()->orderBy('created_at', 'desc')->paginate(10);
 
             $data = [
