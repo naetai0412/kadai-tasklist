@@ -13,6 +13,7 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
     public function index()
     {
         $data = [];
@@ -94,14 +95,10 @@ class TaskController extends Controller
     public function edit($id)
     {
         $task = Task::find($id);
-        
-        if (\Auth::$task->user_id()) {
+
         return view('tasks.edit', [
             'task' => $task,
         ]);
-        }else {
-            return view('welcome');
-        }
     }
 
     /**
@@ -133,9 +130,12 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        $task = Task::find($id);
-        $task->delete();
+        $task = \App\Micropost::find($id);
 
-        return redirect('/');
+        if (\Auth::id() === $task->user_id) {
+            $task->delete();
+        }
+
+        return redirect()->back();
     }
 }
